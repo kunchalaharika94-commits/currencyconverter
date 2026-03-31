@@ -25,8 +25,8 @@ function Login({ onBack,setShowNavbarLogin}) {
     // If validation passes
     localStorage.setItem("user", email);
     console.log("User saved:", localStorage.getItem("user"));
-    navigate("/home");
-    window.location.reload(); // Refresh to update navbar
+     setShowNavbarLogin(true); // ✅ Update navbar via state (no reload needed)
+    navigate("/home");  
   };
 
   return (
