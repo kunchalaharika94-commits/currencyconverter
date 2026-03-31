@@ -10,7 +10,7 @@ function App() {
   const user = localStorage.getItem("user");
 
   return (
-    <BrowserRouter>
+    <HashRouterRouter>
       {/* Navbar logic */}
       {user ? <DashboardNavbar /> : <Navbar />}
 
@@ -19,7 +19,7 @@ function App() {
         <Route path="/" element={
           user ? <Navigate to="/home" replace /> : <Navigate to="/" replace />
         } />
-
+        
         {/* Protected Routes */}
         <Route path="/home" element={
           <PrivateRoute>
@@ -39,7 +39,7 @@ function App() {
           </PrivateRoute>
         } />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
