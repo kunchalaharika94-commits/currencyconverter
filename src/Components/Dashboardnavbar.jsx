@@ -6,7 +6,6 @@ function DashboardNavbar() {
   const logout = () => {
     localStorage.removeItem("user");
     navigate("/login");
-    window.location.reload();
   };
 
   return (
